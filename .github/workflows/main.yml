@@ -30,9 +30,9 @@ jobs:
       run: |
         git config --global user.name 'GitHub Actions'
         git config --global user.email 'actions@github.com'
-        git pull origin main --rebase || true
         git add rates.csv
         git commit -m "Update currency rates" || echo "No changes to commit"
+        git pull origin main --rebase || true
         git push
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
