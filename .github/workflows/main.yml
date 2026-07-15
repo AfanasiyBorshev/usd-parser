@@ -3,7 +3,6 @@ name: Hourly Currency Parser
 on:
   schedule:
     - cron: '0 8 * * *'    # 11:00 MSK = 08:00 UTC
-    - cron: '0 14 * * *'   # 17:00 MSK = 14:00 UTC
     - cron: '30 15 * * *'  # 18:30 MSK = 15:30 UTC
   workflow_dispatch:
 
