@@ -1,3 +1,6 @@
+import warnings
+from urllib3.exceptions import InsecureRequestWarning
+warnings.simplefilter('ignore', InsecureRequestWarning)
 import requests
 from bs4 import BeautifulSoup
 import csv
@@ -11,7 +14,7 @@ headers = {
 
 try:
     print("Запрашиваем курсы с ПСБ...")
-    response = requests.get(url, headers=headers)
+    response = requests.get(url, verify=False, timeout=10)
     
     if response.status_code == 200:
         print("✅ Сайт ПСБ успешно открыт!")
