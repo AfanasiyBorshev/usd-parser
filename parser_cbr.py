@@ -14,7 +14,7 @@ headers = {
 
 try:
     print("Запрашиваем курсы с ПСБ...")
-    response = requests.get(url, verify=False, timeout=10)
+    response = requests.get(url, headers=headers, verify=False, timeout=10)
     
     if response.status_code == 200:
         print("✅ Сайт ПСБ успешно открыт!")
